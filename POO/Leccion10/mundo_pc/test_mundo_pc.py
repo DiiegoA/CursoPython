@@ -64,17 +64,29 @@ def crear_computadora():
 
 
 if __name__ == '__main__':
+    # Creamos una lista vacía llamada 'ordenes' para almacenar las órdenes de compra.
     ordenes = []
 
+    # Iniciamos un bucle 'while' infinito. Este bucle se ejecutará continuamente hasta que se rompa explícitamente.
     while True:
+        # Llamamos a la función 'crear_computadora()' para crear una instancia de una computadora.
         computadora = crear_computadora()
+
+        # Creamos una instancia de la clase 'Orden' que contiene la computadora creada en el paso anterior.
         orden = Orden([computadora])  # Crear una nueva orden
 
+        # Agregamos la orden recién creada a la lista 'ordenes'.
         ordenes.append(orden)
 
+        # Solicitamos al usuario si desea agregar otra computadora a la orden. La respuesta se almacena en la variable 'opcion' en minúsculas.
         opcion = input("¿Desea agregar otra computadora a la orden? (s/n): ").lower()
+
+        # Comprobamos si la respuesta del usuario no es 's' (lo que significa que no desea agregar más computadoras).
         if opcion != 's':
+            # Si la respuesta no es 's', salimos del bucle 'while' con 'break'.
             break
 
+    # Iniciamos un bucle 'for' que recorre cada orden en la lista 'ordenes'.
     for orden in ordenes:
-        print(f"Orden de compra {orden._id_orden}:\n{orden}")
+        # Imprimimos el ID de cada orden utilizando el método 'getIdOrden()' (asumiendo que existe).
+        print(f"Orden de compra {orden.getIdOrden}")

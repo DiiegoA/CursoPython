@@ -8,11 +8,11 @@ class Orden:
 
     Orden.contador_ordenes += 1
     self._id_orden = Orden.contador_ordenes
-    self._computadoras = computadoras
+    # self._computadoras = computadoras
 
-  def agregar_computadora(self, computadora):
+  # def agregar_computadora(self, computadora):
 
-    self._computadoras.append(computadora)
+  #   self._computadoras.append(computadora)
 
   def __str__(self):
 
@@ -24,3 +24,6 @@ class Orden:
     Orden: {self._id_orden}
     Computadoras: {computadoras_str}
     '''
+  @property
+  def getIdOrden(self):
+      return self._id_orden
